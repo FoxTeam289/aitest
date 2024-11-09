@@ -38,19 +38,19 @@ canvas.addEventListener("mousemove", initDrawing);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mouseout", stopDrawing);
 
-// Генерация иконок через API
+// Генерация иконок через Replicate API (с использованием CORS Anywhere)
 generateBtn.addEventListener("click", async () => {
   const imageData = canvas.toDataURL("image/png");
 
   try {
-    const response = await fetch("https://api.replicate.com/v1/predictions", {
+    const response = await fetch("https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer r8_auoeg43dCKqUMbRC9gSDxvy6L2l6lnz268T2L",  // замените YOUR_API_KEY на ваш ключ API
+        "Authorization": "Bearer r8_auoeg43dCKqUMbRC9gSDxvy6L2l6lnz268T2L", // Ваш API-ключ
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        version: "a123b456",  // укажите версию модели (например, Stable Diffusion)
+        version: "a123b456",  // Замените на версию модели, которую вы хотите использовать
         input: { image: imageData },
       }),
     });
