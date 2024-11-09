@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autodraw - Генерация иконок</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Автогенерация иконки</h1>
+
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <button id="generateBtn">Генерировать</button>
+
+    <div id="suggestions" class="suggestions"></div>
+
+    <div id="editor" class="editor" style="display: none;">
+      <h2>Редактирование иконки</h2>
+      <button id="cropBtn">Обрезать</button>
+      <select id="sizeSelect">
+        <option value="32">32x32</option>
+        <option value="64">64x64</option>
+        <option value="128">128x128</option>
+      </select>
+      <button id="downloadBtn">Скачать</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
